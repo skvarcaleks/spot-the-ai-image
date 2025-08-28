@@ -14,6 +14,7 @@ import { ResultComponent } from './components/result/result.component';
 export class AppComponent {
   state: 'home' | 'quiz' | 'result' = 'home';
   finalScore = 0;
+  public title = 'AI ali ne?'
 
   onQuizEnded(score: number) {
     this.finalScore = score;

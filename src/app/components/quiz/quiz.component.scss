@@ -1,72 +1,44 @@
 #wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    width: 40vw;
-    margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 40vw;
+  margin: 0 auto;
 }
 
 img {
-    height: 800px;
-    width: auto;
-    border-radius: 10px;
+  height: 800px;
+  width: auto;
+  border-radius: 10px;
 }
 
 .btns-row {
-    position: absolute;
-    bottom: 0;
-    margin-bottom: 25px;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 100px;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 25px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 75px;
 }
 
 .btns-row button {
-    box-shadow: 10px 10px 16px 0px rgba(0,0,0,0.44);
+  box-shadow: 10px 10px 16px 0px rgba(0,0,0,0.44);
+  font-weight: bold;
+  width: 180px;
+  margin: 0 20px 0 20px;
 }
 
 #btn-ai {
-    background-color: red;
+  background-color: red;
 }
 
 #image-wrapper {
-    position: relative;
+  position: relative;
 }
-
-// .timer-circle {
-//   position: absolute;
-//   top: 10px;
-//   right: 10px;
-//   width: 60px;
-//   height: 60px;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   font-size: 1.1rem;
-//   font-weight: bold;
-//   color: white;
-//   background-color: rgba(0, 0, 0, 0.233);
-// }
-
-// .timer-circle svg {
-//   position: absolute;
-//   transform: rotate(-90deg);
-//   top: 0;
-//   left: 0;
-// }
-
-// .timer-circle .track {
-//   opacity: 0.3;
-// }
-
-// .timer-circle .progress {
-//   transition: stroke-dashoffset 1s linear;
-// }
-
 
 .timer-circle {
   position: absolute;
@@ -107,4 +79,60 @@ img {
 
 .timer-circle .progress {
   transition: stroke-dashoffset 1s linear;
+}
+
+// Answer overlay styles
+.answer-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in, visibility 0.3s ease-in;
+  border-radius: 10px;
+  z-index: 10;
+}
+
+.answer-overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.answer-overlay.correct {
+  background-color: rgba(34, 197, 94, 0.8); // Green overlay with transparency
+}
+
+.answer-overlay.incorrect {
+  background-color: rgba(239, 68, 68, 0.8); // Red overlay with transparency
+}
+
+.overlay-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+
+.overlay-icon {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.overlay-text {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+// Disable buttons when processing answer
+.btns-row button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
