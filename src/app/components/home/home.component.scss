@@ -1,0 +1,26 @@
+#wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 40vw;
+    margin: 0 auto;
+}
+
+#welcome-heading {
+    margin: 0;
+    font-size: 3rem;
+    margin: 0;
+}
+
+#welcome-text {
+    font-size: 1.3rem;
+    font-weight: 100;
+    text-align: center;
+    margin: 0;
+}
+
+#btn-start {
+    margin-top: 30px;
+}

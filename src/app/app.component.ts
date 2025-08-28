@@ -1,12 +1,22 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { HomeComponent } from './components/home/home.component';
+import { QuizComponent } from './components/quiz/quiz.component';
+import { ResultComponent } from './components/result/result.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [CommonModule, HomeComponent, QuizComponent, ResultComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
+
 export class AppComponent {
-  title = 'spot-the-ai-image';
+  state: 'home' | 'quiz' | 'result' = 'home';
+  finalScore = 0;
+
+  onQuizEnded(score: number) {
+    this.finalScore = score;
+    this.state = 'result';
+  }
 }

@@ -1,0 +1,26 @@
+#wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 40vw;
+    margin: 0 auto;
+}
+
+h1{
+    margin: 0;
+    font-size: 3rem;
+}
+
+p {
+    font-size: 1.3rem;
+    font-weight: 100;
+    text-align: center;
+    margin: 0 0 40px 0;;
+}
+
+#stars {
+    padding: 15px;
+    font-size: 1.3rem;
+}

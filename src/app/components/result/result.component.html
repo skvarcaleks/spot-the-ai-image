@@ -1,0 +1,15 @@
+<div id="wrapper">
+    
+    <div id="stars">
+        <span *ngIf="score === 5">⭐⭐⭐⭐⭐</span>
+        <span *ngIf="score === 4">⭐⭐⭐⭐</span>
+        <span *ngIf="score === 3">⭐⭐⭐</span>
+        <span *ngIf="score === 2">⭐⭐</span>
+        <span *ngIf="score === 1">⭐</span>
+        <span *ngIf="score === 0">🥺</span>
+    </div>
+
+    <h1>Hvala za sodelovanje!</h1>
+    <p>Pravilno ste prepoznali <strong>{{ score }} od 5 slik.</strong></p>
+    <button (click)="back()" (click)="playClickSound()">Na začetek</button>
+</div>

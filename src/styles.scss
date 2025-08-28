@@ -1,1 +1,59 @@
-/* You can add global styles to this file, and also import other style files */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+html {
+    background-color: #000;
+    color: #fff;
+    font-size: 25px;
+    margin: 0;
+    padding: 0;
+    overflow-y: hidden;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Archivo Black', sans-serif;
+}
+
+button {
+    background-color: #2ED60F;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3pt;
+    min-width: 100px;
+    padding: 7px 20px 7px 20px;
+    font-size: 1rem;
+}
+
+.pulsing {
+    animation: pulse 2s infinite;
+}
+
+#span-green-text {
+    color: #2ED60F;
+    font-weight: 600;
+}
+
+#videoOzadje {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    filter: blur(30px);
+    opacity: 0.7;
+    z-index: -1;
+}
