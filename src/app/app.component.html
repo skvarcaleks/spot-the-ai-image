@@ -2,6 +2,6 @@
     <source src="particles-com.mp4" type="video/mp4">
 </video>
 
-<app-home *ngIf="state==='home'" (start)="state='quiz'"></app-home>
-<app-quiz *ngIf="state==='quiz'" (ended)="onQuizEnded($event)"></app-quiz>
-<app-result *ngIf="state==='result'" [score]="finalScore" (goHome)="state='home'"></app-result>
+<app-home *ngIf="state==='home'" [lang]="lang" (start)="state='quiz'" (languagePicked)="onLanguagePicked($event)"></app-home>
+<app-quiz *ngIf="state==='quiz'" [lang]="lang" (ended)="onQuizEnded($event)"></app-quiz>
+<app-result *ngIf="state==='result'" [lang]="lang" [score]="finalScore" (goHome)="goHome()"></app-result>

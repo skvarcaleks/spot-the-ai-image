@@ -11,7 +11,12 @@
         <span *ngIf="score === 0">🥺</span>
     </div>
 
-    <h1>Hvala za sodelovanje!</h1>
-    <p>Pravilno ste prepoznali <strong>{{ score }} od 7 slik.</strong></p>
-    <button (click)="back()" (click)="playClickSound()">Na začetek</button>
+    <h1 *ngIf="lang === 'sl'">Hvala za sodelovanje!</h1>
+    <h1 *ngIf="lang === 'en'">Thank you for participating!</h1>
+
+    <p *ngIf="lang === 'sl'">Pravilno ste prepoznali <strong>{{ score }} od 7 slik.</strong></p>
+    <p *ngIf="lang === 'en'">You correctly identified <strong>{{ score }} out of 7 images.</strong></p>
+    
+    <button *ngIf="lang === 'sl'" (click)="back()" (click)="playClickSound()">Na začetek</button>
+    <button *ngIf="lang === 'en'" (click)="back()" (click)="playClickSound()">Home</button>
 </div>

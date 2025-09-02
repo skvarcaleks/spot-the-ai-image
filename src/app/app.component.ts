@@ -14,10 +14,20 @@ import { ResultComponent } from './components/result/result.component';
 export class AppComponent {
   state: 'home' | 'quiz' | 'result' = 'home';
   finalScore = 0;
-  public title = 'AI ali ne?'
+  public title = 'AI, DA ALI NE?'
+  public lang: 'sl' | 'en' = 'sl';
 
   onQuizEnded(score: number) {
     this.finalScore = score;
     this.state = 'result';
+  }
+
+  goHome() {
+    this.lang = 'sl'; // Always reset to Slovenian
+    this.state = 'home';
+  }
+
+  onLanguagePicked(lang: 'sl' | 'en') {
+    this.lang = lang;
   }
 }

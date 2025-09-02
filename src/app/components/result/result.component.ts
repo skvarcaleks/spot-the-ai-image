@@ -12,10 +12,12 @@ export class ResultComponent {
 
   constructor(private soundFx: SoundFxService) {}
 
+  @Input() lang: 'sl' | 'en' = 'sl';
   @Input() score!: number;   // 0-5
   @Output() goHome = new EventEmitter<void>();
 
   back() {
+    this.lang = 'sl';
     this.goHome.emit();
   }
 

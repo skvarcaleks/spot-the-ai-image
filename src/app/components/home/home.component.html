@@ -3,8 +3,29 @@
 
         <img src="infosek-logo.png" alt="Infosek 2025" id="infosek-logo">
 
-        <h1 id="welcome-heading">AI ALI NE?</h1>
-        <p id="welcome-text">Menite, da lahko prepoznate slike, ustvarjene z <span id="span-green-text">umetno inteligenco</span>?<br>Preizkusite se v kvizu in osvojite <span id="span-green-text">nagrado</span>!</p>
-        <button class="pulsing" id="btn-start" (click)="start.emit()" (click)="playClickSound()">Prični</button>
+        <h1 id="welcome-heading" *ngIf="lang === 'sl'">AI, DA ALI NE?</h1>
+        <h1 id="welcome-heading" *ngIf="lang === 'en'">AI OR NOT?</h1>
+
+        <p id="welcome-text" *ngIf="lang === 'sl'">Menite, da lahko prepoznate slike, ustvarjene z <span
+                id="span-green-text">umetno inteligenco</span>?<br>Preizkusite se v kvizu in osvojite <span
+                id="span-green-text">nagrado</span>!</p>
+        <p id="welcome-text" *ngIf="lang === 'en'">Do you think you can recognize images created by <span
+                id="span-green-text">artificial intelligence</span>?<br>Take the quiz and win <span
+                id="span-green-text">a prize</span>!</p>
+
+        <button class="pulsing" id="btn-start" (click)="start.emit()" (click)="playClickSound()"
+            *ngIf="lang === 'sl'">Prični</button>
+        <button class="pulsing" id="btn-start" (click)="start.emit()" (click)="playClickSound()"
+            *ngIf="lang === 'en'">Start</button>
+
+        <div class="lang-select">
+            <button class="language-button" (click)="pickLanguage('sl')" (click)="playClickSound()">
+                <img id="f-sl" src="https://flagcdn.com/si.svg" alt="Slovenščina" />
+            </button>
+
+            <button class="language-button" (click)="pickLanguage('en')" (click)="playClickSound()">
+                <img id="f-en" src="https://flagcdn.com/gb.svg" alt="English" />
+            </button>
+        </div>
     </div>
 </div>

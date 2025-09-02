@@ -1,6 +1,7 @@
 <div class="quiz">
     <div id="wrapper">
-        <h2>Vprašanje {{ current + 1 }} od 7</h2>
+        <h2 *ngIf="lang === 'sl'">Vprašanje {{ current + 1 }} od 7</h2>
+        <h2 *ngIf="lang === 'en'">Question {{ current + 1 }} of 7</h2>
         
         <div id="image-wrapper">
             
@@ -29,14 +30,19 @@
                 <div class="overlay-content">
                     <div class="overlay-icon" *ngIf="overlayType === 'correct'">✓</div>
                     <div class="overlay-icon" *ngIf="overlayType === 'incorrect'">✗</div>
-                    <div class="overlay-text">
+                    <div class="overlay-text" *ngIf="lang === 'sl'">
                         {{ overlayType === 'correct' ? 'Pravilno!' : 'Napačno!' }}
+                    </div>
+                    <div class="overlay-text" *ngIf="lang === 'en'">
+                        {{ overlayType === 'correct' ? 'Correct!' : 'Incorrect!' }}
                     </div>
                 </div>
             </div>
 
         <div class="btns-row">
-            <button id="btn-prava" (click)="select(false)" [disabled]="isProcessingAnswer">Prava</button>
+            <button id="btn-prava" (click)="select(false)" [disabled]="isProcessingAnswer" *ngIf="lang === 'sl'">Prava</button>
+            <button id="btn-prava" (click)="select(false)" [disabled]="isProcessingAnswer" *ngIf="lang === 'en'">Real</button>
+
             <button id="btn-ai" (click)="select(true)" [disabled]="isProcessingAnswer">AI</button>
         </div>
 

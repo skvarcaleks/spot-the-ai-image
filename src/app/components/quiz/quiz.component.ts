@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { EventEmitter, Output } from '@angular/core';
+import { EventEmitter, Output, Input } from '@angular/core';
 import { SoundFxService } from '../../services/sound-fx.service';
 import { NgIf } from '@angular/common';
 
@@ -20,6 +20,7 @@ const shuffle = <T>(arr: T[]): T[] => {
 })
 
 export class QuizComponent {
+  @Input() lang: 'sl' | 'en' = 'sl';
   @Output() ended = new EventEmitter<number>();
 
   constructor(private soundFx: SoundFxService) { }
